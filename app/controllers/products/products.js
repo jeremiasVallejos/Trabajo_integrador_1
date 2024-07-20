@@ -105,14 +105,13 @@ const deleteProduct = (async (req, res) => {
         const client = await connectToDB()
         const db = client.db('tp-untref').collection('products');
         let { code } = req.params
-        const product = req.body;
 
-        const productUpdate = await db.updateOne({ codigo: parseInt(code) }, { $set: product });
+        const productDelete = await db.deleteOne({ codigo: parseInt(code) });
 
-        if (productUpdate.matchedCount === 0) {
-            return res.status(400).json({ message: `Error al modificar el producto` })
+        if (productDelete.deletedCount === 0) {
+            return res.status(400).json({ message: `Error al eliminar el producto` })
         }
-        return res.status(201).json(`Se modificó el precio satisfactoriamente`)
+        return res.status(201).json(`El producto se elimino satisfactoriamente`)
     } catch (error) {
         return res.status(500).send(error.message)
     } finally {

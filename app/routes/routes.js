@@ -7,6 +7,6 @@ router.get('/code/:id', getProductById)
 router.get('/name/:name', getProductByName)
 router.post('/create', createProduct)
 router.patch('/update/:code', editProduct)
-router.delete('/delete', deleteProduct)
+router.delete('/delete/:code', deleteProduct)
 
 module.exports = router;
