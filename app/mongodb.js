@@ -11,8 +11,7 @@ const connectToDB = async () => {
         console.log('Conectado a MongoDB')
         return client
     } catch (error) {
-        console.log('Error al conectar con MongoDB:', error)
-        return null
+        throw new Error('Error al conectar con MongoDB')
     }
 
 }
@@ -23,8 +22,7 @@ const disconnectFromMongoDB = async ()=>{
         console.log('Conexion con MongoDB cerrada')
         return client
     } catch (error) {
-        console.log('Error al cerrar la conexion con MongoDB:', error)
-        return null
+         throw new Error('Error al cerrar la conexion con MongoDB')
     }
 }
 
