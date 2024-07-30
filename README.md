@@ -21,6 +21,9 @@ npm run dev
 ```
 
 ## Uso
+
+Se recomienda usar Postman para la ejecución de los distintos endpoints.
+
 ### Endpoints disponibles
 * Crear un producto:
     ```javascript
@@ -93,7 +96,7 @@ npm run dev
 * Editar el precio de un producto por código:
 
     ```javascript
-    GET /products/update/9876
+    PATCH /products/update/9876
     ```
 
      Cuerpo de la solicitud:
@@ -116,7 +119,7 @@ npm run dev
 * Eliminar un producto por código:
 
     ```javascript
-    GET /products/delete/9876
+    DELETE /products/delete/9876
     ```
 
     Respuesta de la exitosa de la solicitud:
