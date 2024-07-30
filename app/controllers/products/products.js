@@ -71,7 +71,7 @@ const createProduct = (async (req, res) => {
         if (!newProduct) {
             return res.status(400).json({ message: `Error al crear el producto` })
         }
-        return res.status(201).json(`Se creo el producto con el código ${product.codigo} satisfactoriamente`)
+        return res.status(201).json({message: `Se creo el producto con el código ${product.codigo} satisfactoriamente`})
     } catch (error) {
         return res.status(500).send(error.message)
     } finally {
@@ -91,7 +91,7 @@ const editProduct = (async (req, res) => {
         if (productUpdate.matchedCount === 0) {
             return res.status(400).json({ message: `Error al modificar el producto` })
         }
-        return res.status(201).json(`Se modificó el precio satisfactoriamente`)
+        return res.status(201).json({ message: `Se modificó el precio satisfactoriamente`})
     } catch (error) {
         return res.status(500).send(error.message)
     } finally {
@@ -111,7 +111,7 @@ const deleteProduct = (async (req, res) => {
         if (productDelete.deletedCount === 0) {
             return res.status(400).json({ message: `Error al eliminar el producto` })
         }
-        return res.status(201).json(`El producto se elimino satisfactoriamente`)
+        return res.status(201).json({message: `El producto se elimino satisfactoriamente`})
     } catch (error) {
         return res.status(500).send(error.message)
     } finally {
